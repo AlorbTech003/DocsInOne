@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "956031101697-v1t5kvhs6skq0tjthrh32pv52o6lr2q1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.javapapers.com.majorproject",
+            "certificate_hash": "b2430478b5a00a6b98ff77e7c50bcb4ece658827"
+          }
+        },
+        {
           "client_id": "956031101697-tfa8iov9qc7t9n27jksl44mg41jf1r3f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
