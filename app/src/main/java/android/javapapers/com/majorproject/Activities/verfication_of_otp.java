@@ -90,14 +90,14 @@ public class verfication_of_otp extends AppCompatActivity {
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                number,
-                30,
+                60,
                 TimeUnit.SECONDS,
                 this,
                 mCallbacks,
                 resendingToken
         );
 
-        countDownTimer=new CountDownTimer(30000,1000){
+        countDownTimer=new CountDownTimer(60000,1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -108,8 +108,8 @@ public class verfication_of_otp extends AppCompatActivity {
             public void onFinish() {
                 Intent i=new Intent(getApplicationContext(), MainActivity.class);
                 Toast.makeText(verfication_of_otp.this, "Try again", Toast.LENGTH_SHORT).show();
-                //finish();
-                //startActivity(i);
+                finish();
+                startActivity(i);
 
 
             }

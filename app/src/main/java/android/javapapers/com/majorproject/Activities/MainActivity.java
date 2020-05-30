@@ -9,7 +9,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
+import android.javapapers.com.majorproject.Adapters.SlideViewAdapter;
 import android.javapapers.com.majorproject.Fragments.FragmentSecond;
 import android.javapapers.com.majorproject.Fragments.HomeFragment;
 import android.javapapers.com.majorproject.R;
@@ -63,12 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-        //load default fragment
-        fragment=new HomeFragment();
-        fragmentManager=getSupportFragmentManager();
-        fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container,fragment);
-        fragmentTransaction.commit();
 
         ActionBar actionBar=getSupportActionBar();
         if(actionBar!=null) {
@@ -93,12 +89,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Menu nav_menu=navigationView.getMenu();
             nav_menu.findItem(R.id.signup).setVisible(false);
 
-
-            fragmentManager=getSupportFragmentManager();
-            fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,new HomeFragment());
-            fragmentTransaction.commit();
-
             logout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -106,9 +96,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             });
         }
-        else {
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,new HomeFragment()).commit();
-        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
+
 
     }
 
