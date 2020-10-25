@@ -17,8 +17,9 @@ import java.util.ArrayList;
 
 public class RecyclerViewEducationAdapter extends RecyclerView.Adapter<RecyclerViewEducationAdapter.ViewHolder>{
 
-    private ArrayList<String> educationImageurls=new ArrayList<>();
+    private ArrayList<String> educationImageurls;
     private Context context;
+    private String pos=null;
 
     public RecyclerViewEducationAdapter(Context context,ArrayList<String> mImageurls) {
         this.educationImageurls = mImageurls;
@@ -28,7 +29,7 @@ public class RecyclerViewEducationAdapter extends RecyclerView.Adapter<RecyclerV
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.most_popular,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.education,parent,false);
         return new ViewHolder(view);
     }
 
@@ -43,7 +44,7 @@ public class RecyclerViewEducationAdapter extends RecyclerView.Adapter<RecyclerV
         holder.images.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "position "+position, Toast.LENGTH_SHORT).show();
+                pos=""+position;
             }
         });
     }
@@ -52,6 +53,7 @@ public class RecyclerViewEducationAdapter extends RecyclerView.Adapter<RecyclerV
     public int getItemCount() {
         return educationImageurls.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 

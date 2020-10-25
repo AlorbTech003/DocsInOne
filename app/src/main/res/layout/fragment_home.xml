@@ -125,20 +125,14 @@
                 android:layout_height="200dp"
                 android:layout_below="@+id/education"
                 android:layout_margin="10dp"
-                android:background="@color/cardview_dark_background"
                 android:id="@+id/tab3scroll">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="130dp"
-                    android:layout_height="160dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/educationimages"/>
-                </androidx.cardview.widget.CardView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/recyclerview_education"
+                    android:orientation="horizontal"/>
             </RelativeLayout>
 
         </RelativeLayout>
